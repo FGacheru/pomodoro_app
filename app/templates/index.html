@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+<body>
+    <div class="container">
+        <p id="break" class="label">Break</p><p id="cycles" class="label">Cycles</p>
+        <div id="break-timer" class="timer">
+            <p id="w_minutes">25</p><p class="semicolon">:</p>
+
+        </div>
+    </div>   
+<!-- break timer -->
+    
+
+
+{% extends 'base.html'%}
+{% block styles%} {{ super() }}
+<script src="{{url_for('static',filename='js/script.js')}}"></script>
+{% endblock %}
+</body>
