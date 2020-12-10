@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
 
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
 {% block content %}
 <div class="container">
   <h1 class="text-center">Pomodoro</h1>
-  <p>Click <a href="{{ url_for('auth.register') }}">here</a> to sign up to make a pitch.  </p>
-  <p>If already signed up click <a href="{{ url_for('auth.login') }}">here</a> to log in.</p>
+
+  {% for x in session%}
+    <h1>{{ x.setPurpose }}</h1>
+  {% endfor %}
 </div>
+
 {% endblock %}

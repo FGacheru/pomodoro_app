@@ -47,8 +47,8 @@ class Session(db.Model):
         db.session.commit()
 
     @classmethod
-    def get_sessions(cls,id):    
-        sessions = Session.query.filter_by(user_id = id).all()
+    def get_sessions(cls,User):    
+        sessions = Session.query.filter_by(user_id = User.id).all()
         return sessions
 
 

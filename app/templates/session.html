@@ -7,4 +7,13 @@
     {{wtf.quick_form(form)}}
 </form>
 
+
+    {% for session in sessions_list %}
+        <p>During the break, remember you have to :</p>
+        <p>{{session.setPurpose}}</p>
+    {% endfor %}    
+    
+
 {% endblock content %}
+
+
