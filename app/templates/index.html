@@ -65,3 +65,21 @@
 
 </html>
 {%endblock%}
+{% extends 'base.html' %}
+
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center">Pomodoro</h1>
+
+  {% for x in session%}
+    <h1>{{ x.setPurpose }}</h1>
+  {% endfor %}
+</div>
+
+{% endblock %}

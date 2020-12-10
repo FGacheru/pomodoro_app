@@ -17,9 +17,16 @@ class ProdConfig(Config):
     """
     pass
 
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:kadas36@localhost/pomodoro'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+
+class ProdConfig(Config):
+    pass
+
 class DevConfig(Config):
-    """
-    development configuration child class
+    DEBUG = True
 
     Args:
         Config: The parent configuration class with General configuration settings.
@@ -32,4 +39,7 @@ config_options = {
 'production':ProdConfig,
 # 'test':TestConfig
 
+config_options = {
+'development':DevConfig,
+'production':ProdConfig
 }
