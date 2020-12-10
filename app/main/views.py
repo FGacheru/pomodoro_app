@@ -11,7 +11,8 @@ def index():
     """
     Function that returns the index page
     """
-    return render_template('index.html')
+    session = Session.query.all()
+    return render_template('index.html', session = session)
 
 
 
@@ -30,6 +31,9 @@ def new_session():
 
         #save session
         new_session.save_session()
-        return redirect(url_for('main.index'))   
+        return redirect(url_for('main.new_session'))   
 
-    return render_template('session.html', form = form)         
+    user=current_user
+    sessions = Session.get_sessions(user)
+
+    return render_template('session.html', form = form, sessions_list = sessions)         
